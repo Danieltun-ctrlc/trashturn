@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash throwingggggggg</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marcellus+SC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Micro+5&family=Micro+5+Charted&family=Roboto:ital,wght@0,100..900;1,100..900&family=Underdog&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <audio id='backgroundAudio'>
+        <source src="./theme_japan.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      
+   <div class="nice">
+      <h1 class="underdog-regular"> trash throwing for the 06-01</h1>
+      <img src="./nice.jpg" width="100px">
+      <p class="caveat-text">
+        Type 1 for (Kyaw Min Soe, Leon)
+        <br>
+        Type 2 for (Zin Min Htet, Aung Pyae Phyo)
+        <br>
+        Type 3 for (Daniel , Kyaw Min Thu)
+      </p>
+      <hr>
+      <h3>this time needs to throw is</h3>
+      <br>
+      <p class="catch"> Daniel/Kyaw Min Thu </p>
+      <br>
+      <h3> Type your number if already thrown in the form</h3>
+      <form id="myForm">
+        
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="submit">Submit</button>
+      </form>
+   </div>
+ 
+
+   <script>
+    window.onload = function() {
+      var audio = document.getElementById('backgroundAudio');
+      audio.play(); 
+    };
+  
+    var button = document.getElementsByTagName("button")[0]
+    button.addEventListener("click", function () {
+        event.preventDefault();
+        var input = document.getElementById("userInput").value;
+        switch (input) {
+            case '3':
+                document.getElementsByClassName('catch')[0].textContent  = "Kyaw Min Soe/ Leon";
+            break;
+            case '1':
+                document.getElementsByClassName('catch')[0].textContent  = "Zin Min Htet/ Aung Pyae Phyo";
+
+
+            break;
+            case '2':
+                document.getElementsByClassName('catch')[0].textContent  = "Daniel/ Kyaw Min Thu";
+            break;
+
+            default:
+                alert("Please type valid number")
+                
+        }
+        document.getElementById("userInput").value = '';
+    })
+   </script>
+</body>
+</html>
